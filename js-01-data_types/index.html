@@ -13,7 +13,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Main custom style for this template -->
+    <!-- Main custom style -->
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body class="bg-dark text-light">
@@ -22,27 +22,43 @@
 
     <main class="container text-center">
       <!-- div.row#principal-row>div.col*3 -->
-      <div
+      <section
         class="row align-items-center justify-content-center"
         id="main-content"
       >
         <!-- logo -->
-        <section class="col-md-3 col-10">
+        <figure class="col-lg-5 col-10">
           <img
             class="img-fluid rounded"
             src="./public/images/dino.jpg"
             alt="Dinosaurio rex escribiendo código"
           />
+        </figure>
+        <!-- title and description -->
+        <section class="col-lg-7 col-12">
+          <div class="row">
+            <!-- principal title -->
+            <div class="col-lg-5 col-12">
+              <h1>JS 01</h1>
+            </div>
+            <!-- sesion description -->
+            <div class="col-lg-7 col-12">
+              <p>Tipos de datos y variables</p>
+              <ul class="text-start">
+                <li>Explicar los tipos de datos.</li>
+                <li>Explicar los principales tipos de datos en JavaScript: string, boolean, number, array, object, undefined y null.</li>
+                <li>Explicar las variables.</li>
+                <li>Declarar variables con nombres significativos.</li>
+                <li>Explicar la conversión implícita y explícita(type casting),</li>
+                <li>Convertir una variable en un tipo number.</li>
+                <li>Convertir una variable en un tipo string.</li>
+                <li>Convertir una variable en un tipo boolean.</li>
+              </ul>
+            </div>
+          </div>
         </section>
-        <!-- principal title -->
-        <section class="col-md-3 col-3 mt-2 mt-md-0">
-          <h1>JS 01</h1>
-        </section>
-        <!-- Sesion description -->
-        <section class="col-md-6 col-9 mt-2 mt-md-0">
-          <p>Tipos de datos y variables</p>
-        </section>
-      </div>
+        
+      </section>
     </main>
 
     <footer></footer>
