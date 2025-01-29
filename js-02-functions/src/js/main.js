@@ -1,4 +1,5 @@
 console.log("JS-02 funciones");
+console.log( console.log("Hola, Thania"));
 
 /* 
  Las funciones permiten organizar, reutilizar y 
@@ -188,3 +189,139 @@ console.log( parseInt( "faba", 10) ); // NaN
 // base binaria (2 dígitos): 0, 1
 
 console.log( parseInt( "faba", 16) ); // 64186 valor decimal
+
+/* 
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+*/
+
+// Arrow function que imprima un mensaje en la consola.
+
+const imprimirMensaje = mensaje => mensaje;
+
+console.log(imprimirMensaje("Hola"));
+
+/** Arrow function que imprima un mensaje con alert */
+const imprimirMensajeAlert = mensaje => alert(mensaje);
+
+// console.log(imprimirMensajeAlert("Hola"));
+
+// imprimirMensajeAlert();
+
+const mensajeTitle = mensaje => document.getElementById("title").innerText = mensaje;
+
+/** 
+ * Función que imprima en consola o alert un mensaje
+ * @param {string} mensaje mensaje a imprimir
+ * @param {string} opcion "consola" o "alert" el destino a imprimir
+*/
+
+
+
+const imprimirMensajeDos = (mensaje = "Hola", opcion = "console") => {
+    if (opcion === "console"){
+        return imprimirMensaje(mensaje);
+    } else if (opcion === "alert"){
+        return imprimirMensajeAlert(mensaje);
+    } else if(opcion === "titulo"){
+        mensajeTitle(mensaje);
+    }
+};
+
+console.log(imprimirMensajeDos("Thania", "consola"));
+// console.log(imprimirMensajeDos("Thania", "alert"));
+console.log(imprimirMensajeDos());
+console.log(imprimirMensajeDos("Hola Thania", "titulo"))
+
+// Usar función de Callback de la función anterior
+
+const imprimirMensajeConCallback = (mensaje, funcionCallback) => funcionCallback( mensaje );
+
+imprimirMensajeConCallback("Thania Elizabeth", imprimirMensajeAlert);
+
+imprimirMensajeConCallback("Thania Elizabeth", mensajeTitle);
+// imprimirMensajeConCallback("Thania Elizabeth", 589);
+
+
+
+// ======= Pase por referencia y pase por valor =========
+
+// Pase por valor
+let colorPintura = "rojo";
+
+function cambiarColorPintura(color){
+  console.log(`El color que llega a la función es ${color}`); // rojo
+    color = "azul";
+    console.log(`El color de la pintura que imprime la función es ${color}`); // azul
+}
+
+cambiarColorPintura(colorPintura);
+console.log(`El color de la pintura final es ${colorPintura}`); // rojo
+
+// Pase por referencia
+
+const colores = ["rojo", "azul", "verde"];
+
+function cambiarColorArreglo(arreglo){
+  console.log(`El arreglo que llega a la función es ${arreglo}`); // "rojo", "azul", "verde"
+  arreglo[0] = "negro";
+  console.log(`Se imprimen los colores en la función: ${arreglo}`); // "negro", "azul", "verde"
+}
+
+cambiarColorArreglo( colores );
+console.log(`Los colores finales dentro del arreglo son ${colores}`); // "negro", "azul", "verde"
+
+// ==========================================================
+
+/* const caricaturas = ["Winnie", "Arnold", "avengers", "Atrevete", "Digimon", "Naruto"];
+console.log( caricaturas.sort() ); // ['Arnold', 'Atrevete', 'Digimon', 'Naruto', 'Winnie', 'avengers'];
+
+const numeros = [ "122", "2", "1", "55"];
+console.log( numeros.sort() );
+console.log( numeros );
+
+const ordenarNumeros = ( numA, numB) => {
+  if  ( numA < numB ){
+    return -1; // numA va antes de numB
+  } else if( numA > numB ){
+    return 1; // numA va después de numB
+  } else {
+    return 0: // Los numeros son iguales
+  }
+}
+
+console.log( ordenarNumeros( 3, 6 ) ); // -1
+console.log( ordenarNumeros( 6, 3 ) ); // 1
+console.log( ordenarNumeros( 3, 3 ) ); // 0 */
+
+const series = ["Winnie", "Arnold", "avengers" ,"Atreve", "Digimon", "Naruto"];
+console.log( series.sort() ); // ['Arnold', 'Atreve', 'Digimon', 'Naruto', 'Winnie', 'avengers']
+const numeros = [ 122, 2, 1, 55]; 
+console.log( numeros.sort() ); // [1, 122, 2, 55]
+const ordenarNumeros = ( numA, numB) => {
+  if( numA < numB ){
+     return -1; // numA va antes que numB
+  } else if( numA > numB ) {
+     return 1; // numA va después que numB
+  } else { // Los números son iguales
+    return 0
+  }
+}
+console.log( ordenarNumeros( 3,6 ) ); // -1
+console.log( ordenarNumeros( 6,3 ) ); // 1
+console.log( ordenarNumeros( 3,3 ) ); // 0
+
+const numbers = [1, 10, 3, 100, 5];
+console.log( numbers.sort( ordenarNumeros ) );
+
+// A continuación se hace una refactorización de lo anterior
+
+const ordenarNumerosSimplificado = (numA, numB) => numA - numB;
+const otrosNumeros = [1, 10, 3, 100, 5];
+console.log( otrosNumeros.sort(ordenarNumerosSimplificado));
+
+const numerosDeLaSuerte = [7, 21, 14, 28, 35];
+console.log(numerosDeLaSuerte.sort((numA, numB) => numA - numB));
+
