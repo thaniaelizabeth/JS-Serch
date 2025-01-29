@@ -325,3 +325,7 @@ console.log( otrosNumeros.sort(ordenarNumerosSimplificado));
 const numerosDeLaSuerte = [7, 21, 14, 28, 35];
 console.log(numerosDeLaSuerte.sort((numA, numB) => numA - numB));
 
+// Ordenar de forma ascendente
+
+const numCh50 = [-19, 15, 13, 18, 5];
+console.log(numCh50.sort((numA, numB) => numB - numA));
