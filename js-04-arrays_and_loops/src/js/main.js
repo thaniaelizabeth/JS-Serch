@@ -308,7 +308,7 @@ for ( let i = 0; i <= 5; i++ ){
     }
 */
 
-
+/* 
 while ( confirm("¿Quieres que te genere tu número de la suerte?") ){
   // random devuelve un número aleatorio entre 0(incluido) y 1(excluído)
   console.log( `Tu número de la suerte es ${ Math.random() }` );
@@ -317,6 +317,19 @@ while ( confirm("¿Quieres que te genere tu número de la suerte?") ){
   // Número aleatorio del 1 al 11(excluido)
   console.log( `Tu número de la suerte es ${ (Math.random()*10) + 1 }` );
   // Número aleatori entero del 1 al 10(inncluido)
-  alert(`Tu número de la suerte es ${ Math.floor((Math.random()*10) + 1 )}` );
+  console.log(`Tu número de la suerte es ${ Math.floor((Math.random()*10) + 1 )}` );
+}
+ */
+// Generar 100 números aleatorios en el rango de 1 al 50(incluyendo).
+// Ordenar e imprimir de manera descendente
+const myArrayNumerosAleatorios = [];
+const numerosAleatorios = arregloNumeros => {
+  for (let i = 0; i < 100; i++){
+  arregloNumeros.push(Math.floor((Math.random()*50) + 1))
+  }
+  // console.log(arregloNumeros);
+  arregloNumeros.sort((numA, numB) => numB - numA);
+  console.log(arregloNumeros); 
 }
 
+numerosAleatorios(myArrayNumerosAleatorios);
