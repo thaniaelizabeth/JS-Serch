@@ -295,3 +295,28 @@ for ( let i = 0; i <= 5; i++ ){
   console.log("Valor de i ", i);
   }
 }
+
+// ============== Ciclo While ======================
+//                (while loop)
+/*
+ Crea un bucle que ejecuta una sentencia mientras la condición especificada
+ se cumpla.
+ Sintaxis:
+    while( condición) sentencia;
+    while ( condición ){
+        sentencias;
+    }
+*/
+
+
+while ( confirm("¿Quieres que te genere tu número de la suerte?") ){
+  // random devuelve un número aleatorio entre 0(incluido) y 1(excluído)
+  console.log( `Tu número de la suerte es ${ Math.random() }` );
+  // Número aleatorio del 0 al 10(excluido)
+  console.log( `Tu número de la suerte es ${ Math.random()*10 }` );
+  // Número aleatorio del 1 al 11(excluido)
+  console.log( `Tu número de la suerte es ${ (Math.random()*10) + 1 }` );
+  // Número aleatori entero del 1 al 10(inncluido)
+  alert(`Tu número de la suerte es ${ Math.floor((Math.random()*10) + 1 )}` );
+}
+
