@@ -87,8 +87,35 @@ getImagenDinosaurio( );
 // Cambiar la imagen de dinosaurio a la imagen web-developer
 const changeImage = () => {
   const refImage = getImagenDinosaurio();
-  refImage.src = "./public/images/web-developer.jpg";
+  refImage.src = "\public\images\web-developer.jpg";
   refImage.alt = "Chica ninja como web developer";
 }
+
 const imagenPrincipal = getImagenDinosaurio();
-imagenPrincipal.addEventListener( "click" , changeImage );
+imagenPrincipal.style.cursor = "pointer";
+// imagenPrincipal.addEventListener( evento , callback );
+// imagenPrincipal.addEventListener( "click" , changeImage );
+imagenPrincipal.addEventListener( "click" , ()=>{
+    // Hacer otras cosas
+    changeImage();
+} );
+
+
+
+// ------------------ Propiedades de visualización ---------------
+//                       Desaparecer el elemento
+// display : none (quitar el elemento del DOM)
+// visibility: hidden (ocultar el elemento)
+// refBtnPrimary = document.quearySelector("#btn-primary")
+refBtnPrimary = document.getElementById("btn-primary");
+refBtnSecondary = document.getElementById("btn-secondary");
+refBtnSuccess = document.getElementById("btn-success");
+
+refBtnPrimary.addEventListener("click", ()=>{
+  refBtnPrimary.style.display = "none";
+} );
+
+
+refBtnSecondary.addEventListener("click", () =>{ refBtnSecondary.style.display = "none";
+});
+// Aplicar visibility = "hidden" para el btn-secondary
