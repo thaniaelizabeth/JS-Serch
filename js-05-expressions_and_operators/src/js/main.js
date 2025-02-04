@@ -100,3 +100,221 @@ console.log("grape".localeCompare("grape"));  // 0 (son iguales)
 console.log("pear".localeCompare("orange"));  // 1 (porque "pear" > "orange")
 console.log("a".localeCompare("A", "en", { sensitivity: "base" })); // 0
 console.log( "a".localeCompare("A") ); //
+
+// Number: devuelve verdadero solo si ambos operandos tienen el mismo valor. 
+// +0 y -0 se tratan como el mismo valor. 
+// Si alguno de los operandos es NaN, devuelve falso.
+console.log(  +0 == -0 ); // true
+console.log(  NaN == NaN ); // false
+console.log(  1 == 1 ); // true
+console.log(  1 == 1.0 ); // true
+console.log(  1 == 1.1 ); // false
+console.log(  isNaN("hola" / 3 )  ); // true
+console.log( "hola" / 3); //NaN
+console.log( "hola" / 3 == NaN); // false
+
+
+// ------- Operadores de asignación ----------------
+/*
+ Asigna un valor a su operador izquierdo basándose en el valor
+ de su operando derecho:
+ asignación =
+ 
+ Operadores abreviados ( compuestos ):
+  op1 += op2  -> op1 = op1 + op2
+  op1 -= op2  -> op1 = op1 - op2
+  op1 *= op2  -> op1 = op1 * op2
+*/
+
+let suma = 0;
+
+// Agregar 2 al valor de suma
+suma += 2;
+console.log(suma);
+
+let valorA = 15;
+valorA *= 2;
+console.log(valorA);
+
+let mensaje = "Me voy de vacaciones";
+mensaje += 2;
+
+console.log(mensaje);
+
+// -------------- Operandos unarios ---------------
+// Solo actúan sobre un operando
+// Negación unaria
+
+let numero = 3;
+let dinero = -numero;
+console.log( numero, dinero); 
+
+// suma unaria
+let pago = +dinero;
+console.log( pago);
+
+let intereses = +"5.23";
+console.log( 5 + intereses);
+
+let pagoFinal = 0;
+console.log( pagoFinal += 5 + + "3");
+console.log( pagoFinal += 5 + parseInt("3"));
+
+// Operador de incremento y decremento en unidad.
+/*
+  Operador de pre-incremento y pre-decremento
+    ++ valor
+    -- valor
+  Operador de post-incremento y post-decremento
+    valor ++
+    valor --
+*/
+
+let number = 10;
+++ number;
+console.log(number);
+number ++
+console.log(number);
+
+/* for (let i = 0; index < Array.length; index ++){
+   const ()
+}
+ */
+
+number = 20;
+console.log(number);
+console.log(number = number + 1);
+
+number = 20;
+console.log(number++);
+console.log(number);
+
+console.log(++number);
+console.log(number);
+
+number = 40;
+console.log( number = number + 1); //41
+console.log( number ); // 41
+console.log( ++number ); // 42
+
+number = 40;
+console.log( ++number ); // 41
+console.log( number ); // 41
+
+number = 40;
+console.log( -- number ); // 39
+console.log( number ); // 39
+
+number = 100;
+let kati = 10;
+console.log( kati + + number  ); // 110
+console.log( kati + ++number  ); // 111
+
+// ------------ Ejercicio Mental ---------------------
+let x = 3;
+let y = x++; // y:3   x:4
+console.log(`x :${ x++ } y:${ ++y }`); // x:4    y:4
+                                       // x:5
+console.log(`x :${ x } y:${ y }`); // x:5     y:4
+
+
+// --------- Ejercicio mental ------------
+
+let a = 0, b = 0;
+for (; a<3; b = a++){
+   console.log(a,b);
+   
+}
+console.log(a,b);
+
+// ------------ Ejercicio Mental ---------------------
+a = 0, b = 0; // 
+for( ; a < 3 ; b = ++a){ // b=1 a=1, b=2 a=2, b=3 a=3
+  console.log( a , b ); 
+  // N.Iteración     a     b
+  //   1             0     0
+  //   2             1     1
+  //   3             2     2
+
+}
+console.log( a , b ); // 3, 3
+
+// ===========================================
+
+const numeros = [2,4,5,67,8];
+let indice = 0;
+while( indice < numeros.length ){
+   console.log("Numero:", numeros[indice++] );
+}
+
+/* OP1 && OP2 Si OP1 es verdadero, se retorna la expresión de OP2.
+ OP1 && OP2 si OP1 es falso, se retorna la expresión de OP1.
+ OP1 || OP2 Si OP1 es verdadero, se retorna la expresión de OP1.
+  */
+// Se consideran falsos: "", 0, null, undefined, NaN
+
+console.log( true && false);
+console.log( true && "Usando corto circuito");
+console.log( "false" && "Mi mente");
+console.log( 0 && "Mi mente");
+console.log( false && "Mi mente");
+console.log( "" && "Mi mente");
+console.log( undefined && "Mi mente");
+console.log( null && "Mi mente");
+console.log( NaN && "Mi mente");
+
+// console.log( true || "Usando corto circuito");
+console.log( false || "Usando corto circuito");
+console.log( true || "Usando corto circuito");
+console.log( true || false);
+
+// casos prácticos
+// console.log( vx );
+
+console.log(true || vx);
+
+console.log("sep");
+let loggedIn = false
+loggedIn && console.log("b");
+
+
+// ------------ ejercicio-------------------------------
+// Mostrar en consola "Acceso permitido" solo si la variable esAdmin = true
+
+let esAdmin = true;
+esAdmin && console.log( "Acceso permitido" );
+
+// ------------------------
+let nombre = "";
+let usuario = nombre || "Invitado";
+// let usuario = nombre ?? "Invitado";
+console.log( "Hola " + usuario );
+
+// ------------------ Ejercicio --------------------------
+/*
+  Imprimir en consola "Acceso Denegado" si la variable esAutorizado = true
+  En caso contrario imprimir "Acceso concedido".
+*/
+
+console.log("---------------")
+
+let esAutorizado = false;
+if (esAutorizado === true)
+   console.log("Acceso denegado")
+else console.log("Acceso concedido");
+
+console.log( esAutorizado === true ? "Acceso denegado" : "Acceso concedido");
+
+esAutorizado && console.log("Acceso denegado");
+esAutorizado || console.log("Acceso concedido");
+
+let acceso = esAutorizado && "Acceso concedido" || "Acceso denegado";
+
+console.log( acceso );
+
+
+
+
+
+
+
