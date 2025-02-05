@@ -298,7 +298,7 @@ console.log( "Hola " + usuario );
 
 console.log("---------------")
 
-let esAutorizado = false;
+let esAutorizado = true;
 if (esAutorizado === true)
    console.log("Acceso denegado")
 else console.log("Acceso concedido");
@@ -308,8 +308,9 @@ console.log( esAutorizado === true ? "Acceso denegado" : "Acceso concedido");
 esAutorizado && console.log("Acceso denegado");
 esAutorizado || console.log("Acceso concedido");
 
-let acceso = esAutorizado && "Acceso concedido" || "Acceso denegado";
+// Aquí se cambió a que true es aaceso concedido.
 
+let acceso = esAutorizado && "Acceso concedido" || "Acceso denegado";
 console.log( acceso );
 
 
