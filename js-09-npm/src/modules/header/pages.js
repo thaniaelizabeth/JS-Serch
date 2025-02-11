@@ -17,7 +17,7 @@ const pages = [
       name: "Acerca de nostros",
       url: "/src/pages/about-us/about-us.html",
       active: false,
-      visible: true,
+      visible: false,
       icon: '<i class="bi bi-postcard-heart-fill"></i>',
     },
     {
