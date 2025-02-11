@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "category": "Verduras",
+    "title": "Jitomate",
+    "description": "Kilo de jitomate bola proveniente de Xochimilco",
+    "price": 29.0,
+    "image": "",
+    "rating": 4.7,
+    "disponibility": true
+  },
+  {
+    "id": 2,
+    "category": "Verduras",
+    "title": "Papa",
+    "description": "Kilo de papa proveniente de Tlalpan",
+    "price": 35.0,
+    "image": "",
+    "rating": ,
+    "disponibility": true
+  },
+  {
+    "id": 3,
+    "categoría": [
+      {
+        "idCategoria": 1,
+        "descripción": "Frutas"
+      },
+      {
+        "idCategoria": 2,
+        "descripción": "Citricos"
+      }
+    ],
+    "title": "Quelites",
+    "description": "Manojo de quelites de 500 g proveniente de Milpa Alta",
+    "price": 20.0,
+    "image": "",
+    "rating": ,
+    "disponibility": true
+  }
+]
