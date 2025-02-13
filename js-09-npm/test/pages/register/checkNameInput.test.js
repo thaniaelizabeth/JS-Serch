@@ -32,7 +32,7 @@ test ("Verificar que el nombre ingresado sea inválido", () => {
 });
 
 test("Verificar que el nombre sea null o undefined", () => {
-    expect( checkNameInput(null).toBeFalsy());
-    expect( checkNameInput(undefined).toBeFalsy());
+    expect( checkNameInput(null)).toBeFalsy();
+    expect( checkNameInput(undefined)).toBeFalsy();
 
 })
